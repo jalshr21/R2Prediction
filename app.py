@@ -1,5 +1,5 @@
 from flask import request, Flask
-from R2Prediction.src.scripts import predict
+from src.scripts import predict
 
 app = Flask(__name__)
 

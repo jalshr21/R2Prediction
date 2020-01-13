@@ -1,5 +1,5 @@
 import spacy
-from R2Prediction.src.data import reading
+from src.data import reading
 import numpy as np
 from sklearn.svm import SVC
 from sklearn.metrics import f1_score
