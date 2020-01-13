@@ -6,7 +6,8 @@ app = Flask(__name__)
 @app.route('/get-prediction')
 def query_example():
     language = request.args.get('text')
-    return predict.predict([language])
+    ans = predict.predict([language])
+    return str(ans[0])
 
 
 if __name__ == '__main__':

@@ -1,12 +1,10 @@
 import pickle
-import spacy
-
+import en_core_web_sm
 
 def predict(txt):
-    nlp = spacy.load('en_core_web_md')
-    file = open('final_model.sav', 'rb')
+    nlp = en_core_web_sm.load()
+    file = open('/Users/shrutijalan/CICD-Flask/R2Prediction/src/scripts/final_model.sav', 'rb')
     clf2 = pickle.load(file)
-    doc = nlp(txt)
     X = []
     for t in txt:
         doc = nlp(t)

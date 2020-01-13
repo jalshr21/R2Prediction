@@ -4,10 +4,11 @@ import numpy as np
 from sklearn.svm import SVC
 from sklearn.metrics import f1_score
 import pickle
+import en_core_web_sm
 
 def fit():
-    nlp = spacy.load('en_core_web_md')
-    data = reading.readSqliteData('db.sqlite')
+    nlp = en_core_web_sm.load()
+    data = reading.readSqliteData('/Users/shrutijalan/CICD-Flask/R2Prediction/db.sqlite')
     X = []
     y = []
     for index, row in data.iterrows():
