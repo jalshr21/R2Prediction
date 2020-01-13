@@ -1,11 +1,10 @@
 from flask import request, Flask
-import json
+from R2Prediction.src.scripts import predict
 app = Flask(__name__)
-@app.route('/plus_one')
-def plus_one():
-    x = int(request.args.get('x', 1))
-    return json.dumps({'x': x + 1})
-@app.route('/square')
-def square():
-    x = int(request.args.get('x', 1))
-    return json.dumps({'x': x * x})
+
+@app.route('/get-prediction')
+def query_example():
+    language = request.args.get('text')
+    return predict.predict([language])
+
+
