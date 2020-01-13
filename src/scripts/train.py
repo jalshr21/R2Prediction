@@ -28,3 +28,7 @@ def fit():
     #Save model
     filename = 'final_model.sav'
     pickle.dump(clf, open(filename, 'wb'))
+
+
+if __name__ == '__main__':
+    fit()
