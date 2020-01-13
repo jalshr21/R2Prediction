@@ -24,7 +24,7 @@ def readSqliteData(filepath):
     while row:
         data.append((row[1], row[3]))
         row = cursor.fetchone()
-    dfObj = pd.DataFrame(data, columns=["text", "label"])
+    dfObj = pd.DataFrame(data, columns=["text", "class_label"])
     cursor.close()
     dbcon.close()
     return dfObj
