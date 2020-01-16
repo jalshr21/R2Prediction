@@ -3,3 +3,4 @@ flask-restplus
 spacy
 sklearn
 pandas
+flake8
