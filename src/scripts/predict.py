@@ -1,6 +1,6 @@
 import pickle
 import en_core_web_sm
-import sklearn
+
 
 def predict(txt):
     nlp = en_core_web_sm.load()
@@ -11,4 +11,3 @@ def predict(txt):
         doc = nlp(t)
         X.append(doc.vector)
     return clf2.predict(X)
-

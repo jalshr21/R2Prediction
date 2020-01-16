@@ -1,10 +1,10 @@
-import spacy
 from src.data import reading
 import numpy as np
 from sklearn.svm import SVC
 from sklearn.metrics import f1_score
 import pickle
 import en_core_web_sm
+
 
 def fit():
     nlp = en_core_web_sm.load()
@@ -26,7 +26,7 @@ def fit():
     y_pred = clf.predict(X_test)
     print(f1_score(y_pred, y_test, average='weighted'))
 
-    #Save model
+    # Save model
     filename = './src/scripts/final_model.sav'
     pickle.dump(clf, open(filename, 'wb'))
 
