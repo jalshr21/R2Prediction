@@ -1,9 +1,10 @@
 import pickle
 import en_core_web_sm
+import sklearn
 
 def predict(txt):
     nlp = en_core_web_sm.load()
-    file = open('/Users/shrutijalan/CICD-Flask/R2Prediction/src/scripts/final_model.sav', 'rb')
+    file = open('./src/scripts/final_model.sav', 'rb')
     clf2 = pickle.load(file)
     X = []
     for t in txt:

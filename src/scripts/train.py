@@ -8,7 +8,7 @@ import en_core_web_sm
 
 def fit():
     nlp = en_core_web_sm.load()
-    data = reading.readSqliteData('/Users/shrutijalan/CICD-Flask/R2Prediction/db.sqlite')
+    data = reading.readSqliteData('./db.sqlite')
     X = []
     y = []
     for index, row in data.iterrows():
@@ -27,9 +27,11 @@ def fit():
     print(f1_score(y_pred, y_test, average='weighted'))
 
     #Save model
-    filename = 'final_model.sav'
+    filename = './src/scripts/final_model.sav'
     pickle.dump(clf, open(filename, 'wb'))
 
 
 if __name__ == '__main__':
+    import sklearn
+    print(sklearn.__version__)
     fit()
